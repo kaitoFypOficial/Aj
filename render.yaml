@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ashna-roblox-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    envVars:
+      - key: ASHNA_API_KEY
+        sync: false
+      - key: ASHNA_MODEL
+        value: glm-5.3-flash
+      - key: ASHNA_BASE_URL
+        value: https://api.ashna.ai/v1/api
